@@ -1,14 +1,47 @@
-# ClinicPulse 🩺
+# 🩺 ClinicPulse
 
-Sistema moderno de gestão de clínicas médicas, baseado em microsserviços com Java + Spring Boot. Projeto dockerizado e preparado para escalabilidade, modularidade e estudos práticos.
+**ClinicPulse** é um sistema de gerenciamento de clínicas médicas moderno e modular, desenvolvido com arquitetura de microsserviços utilizando Java, Spring Boot, PostgreSQL, Docker e RabbitMQ.
 
-## Tecnologias principais
-- Spring Boot 3, Java 21
-- Spring Cloud (Eureka, Feign, Config)
-- PostgreSQL, RabbitMQ
-- Docker, Docker Compose
-- JWT, Swagger, Zipkin
+---
 
-## Início rápido
+## 🚀 Tecnologias Utilizadas
+
+- Java 21
+- Spring Boot 3
+- PostgreSQL (um banco por microsserviço)
+- RabbitMQ
+- Docker + Docker Compose
+- Maven multimódulo (pom.xml pai e filhos)
+
+---
+
+## 🧱 Estrutura Inicial
+
+```
+clinicpulse/
+├── pom.xml                   # POM pai
+├── docker-compose.yml        # Infraestrutura com bancos, RabbitMQ, Zipkin
+├── README.md
+├── auth-service/             # Microsserviço de autenticação (em construção)
+├── patient-service/
+├── doctor-service/
+├── appointment-service/
+├── notification-service/
+├── config-server/
+├── discovery-server/
+└── infra/
+    ├── postgres/
+    └── rabbitmq/
+```
+
+---
+
+## 🧪 Como subir a infraestrutura
+
 ```bash
 docker compose up -d
+```
+
+Verifique:
+- RabbitMQ: http://localhost:15672 (guest / guest)
+- Zipkin: http://localhost:9411
