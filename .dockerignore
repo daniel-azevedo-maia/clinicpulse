@@ -1,0 +1,13 @@
+# IDE
+.idea
+*.iml
+
+# VCS
+.git
+
+# builds locais
+**/target/
+
+# arquivos de sistema
+.DS_Store
+Thumbs.db

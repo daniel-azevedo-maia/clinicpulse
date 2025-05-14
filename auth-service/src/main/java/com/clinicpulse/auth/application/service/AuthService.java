@@ -5,6 +5,7 @@ import com.clinicpulse.auth.domain.model.AppUser;
 import com.clinicpulse.auth.domain.model.Role;
 
 import com.clinicpulse.auth.domain.repository.AppUserRepository;
+import com.clinicpulse.auth.infrastructure.exception.EmailAlreadyExistsException;
 import com.clinicpulse.auth.infrastructure.exception.InvalidCredentialsException;
 import com.clinicpulse.auth.infrastructure.exception.UserNotFoundException;
 import com.clinicpulse.auth.infrastructure.security.JwtService;
@@ -22,7 +23,7 @@ public class AuthService {
 
     public JwtAuthenticationResponse register(UserRegistrationRequest request) {
         if (userRepository.existsByEmail(request.getEmail())) {
-            throw new IllegalArgumentException("E-mail já cadastrado.");
+            throw new EmailAlreadyExistsException("E-mail já cadastrado.");
         }
 
         AppUser user = AppUser.builder()
