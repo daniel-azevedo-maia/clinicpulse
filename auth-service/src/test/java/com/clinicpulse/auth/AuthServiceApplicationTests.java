@@ -1,4 +1,4 @@
-package com.clinicpulse.auth_service;
+package com.clinicpulse.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
